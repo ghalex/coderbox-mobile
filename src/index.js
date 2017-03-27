@@ -1,6 +1,8 @@
 import React from "react";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import injectTapEventPlugin from "react-tap-event-plugin";
 
 /** Store */
 import createStore from "./store";
@@ -10,19 +12,23 @@ import { Router, Route, hashHistory } from "react-router";
 import { syncHistoryWithStore } from "react-router-redux";
 
 /** Pages */
-import { TodosPage, ProjectsPage } from "pages";
+import { DreamboxPage, DreamboxesPage } from "pages";
 
 document.startApp = function (container) {
 	const store = createStore();
 	const history = syncHistoryWithStore(hashHistory, store);
 	
+	injectTapEventPlugin();
+
 	ReactDOM.render(
-		<Provider store={store}>
-			<Router history={history}>
-				<Route path="/" component={TodosPage} />
-				<Route path="/projects" component={ProjectsPage} />
-			</Router>
-		</Provider>,
+		<MuiThemeProvider>
+			<Provider store={store}>
+				<Router history={history}>
+					<Route path="/" component={DreamboxesPage} />
+					<Route path="/dreambox/:id" component={DreamboxPage} />
+				</Router>
+			</Provider>
+		</MuiThemeProvider>,
 		container
 	);
 }

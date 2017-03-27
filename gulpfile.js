@@ -19,8 +19,6 @@ var paths      = {
 var vendors = [
 	"moment",
 	"lodash",
-	"react",
-	"react-dom",
 	"react-redux",
 	"react-router",
 	"react-router-redux",
