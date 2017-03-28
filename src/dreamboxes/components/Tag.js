@@ -4,7 +4,7 @@ const Tag = ({ tag }) => {
 
 	return (
 		<div className="tag">
-		    {tag.name}
+			{tag.name}
 		</div>
 	);
 };

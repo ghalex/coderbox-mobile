@@ -1,7 +1,7 @@
 import React from "react";
 import { Flex } from "react-flex";
-import TagList from "./TagList";
 import TitleList from "./TitleList";
+import Technologies from "./Technologies";
 import Author from "./Author.js";
 
 const Dreambox = ({ box }) => {
@@ -17,7 +17,7 @@ const Dreambox = ({ box }) => {
 					</div>
 				</div>
 			</Flex>
-			<TagList technologies={box.technologies} />
+			<Technologies items={box.technologies} />
 			<label className="titles">job title</label>
 			<TitleList titles={box.titles} />
 			<label className="titles">published by:</label>
