@@ -2,8 +2,9 @@ import React, { PropTypes } from "react";
 import { connect } from "react-redux";
 import Dreambox from "../components/Dreambox";
 import * as actions from "../actions";
+import * as selectors from "../selectors";
 
-class ViewDreamboxes extends React.Component {
+class ListDreamboxes extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -28,17 +29,18 @@ class ViewDreamboxes extends React.Component {
 	}
 };
 
-ViewDreamboxes.propTypes = {
+ListDreamboxes.propTypes = {
+	"boxes": PropTypes.array,
 	"onReady": PropTypes.func,
 }
 
-ViewDreamboxes.defaultProps = {
+ListDreamboxes.defaultProps = {
 	"boxes": []
 }
 
 const mapState = (state) => {
 	return {
-		boxes: state.dreamboxes.items
+		"boxes": selectors.all(state)
 	}
 }
 
@@ -50,4 +52,4 @@ const mapDispatch = (dispatch) => {
 	}
 }
 
-export default connect(mapState, mapDispatch)(ViewDreamboxes);
+export default connect(mapState, mapDispatch)(ListDreamboxes);

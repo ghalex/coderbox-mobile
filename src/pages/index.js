@@ -1,15 +1,7 @@
-import DreamboxesPage from "./components/DreamboxesPage";
+import ListDreamboxesPage from "./components/ListDreamboxesPage";
 import DreamboxPage from "./components/DreamboxPage";
-import * as actions from "./actions";
-import reducer from "./reducer";
-
-
-export default {
-	reducer,
-	actions
-}
 
 export {
-	DreamboxesPage,
+	ListDreamboxesPage,
 	DreamboxPage
 }

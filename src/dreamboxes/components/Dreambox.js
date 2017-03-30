@@ -5,12 +5,17 @@ import Technologies from "./Technologies";
 import Author from "./Author.js";
 
 const Dreambox = ({ box }) => {
+
+	if (!box) {
+		return <div>No box to render</div>;
+	}
+
 	return (
 		<div className="dreambox">
 			<Flex className="topPart">
 				<img src={box.icon} height="50" />
 				<div>
-					<a className="title" href="#/dreambox/6">{box.name}</a>
+					<a className="title" href={"#/dreambox/" + box._id}>{box.name}</a>
 					<div>
 						<span>23 Mar 2017</span>
 						<a href="/dreambox/6">Open</a>

@@ -14,25 +14,14 @@ const fetchComplete = (dreamboxes) => {
 	}
 }
 
-const openDreambox = (dreamboxId) => {
-	return {
-		type: constants.DREAMBOX_OPEN,
-		payload: dereamboxId
-	}
-}
-
-
-export function xx () {
-	return (dispatch) => {
-
-		// Show loading
-		dispatch(fetching());
-
-	}
-}
-
 export function loadDreamboxes () {
-	return async (dispatch) => {
+	return (dispatch, getState) => {
+
+		let dreamboxes = getState().dreamboxes.items;
+
+		if (dreamboxes.items > 0) {
+			dispatch(fetchComplete(dreamboxes));
+		}
 
 		// Show loading
 		dispatch(fetching());

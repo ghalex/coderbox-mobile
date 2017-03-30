@@ -1,6 +1,6 @@
 import React from "react";
 import AppBar from "material-ui/AppBar";
-import { ViewDreamboxes } from "dreamboxes";
+import { ListDreamboxes } from "dreamboxes";
 
 const DreamboxesPage = ({}) => {
 
@@ -9,7 +9,7 @@ const DreamboxesPage = ({}) => {
 	return (
 		<div className="page">
 			<AppBar title="Dreamboxes" style={styles.example} />
-			<ViewDreamboxes />
+			<ListDreamboxes />
 		</div>
 	)
 }

@@ -12,7 +12,7 @@ import { Router, Route, hashHistory } from "react-router";
 import { syncHistoryWithStore } from "react-router-redux";
 
 /** Pages */
-import { DreamboxPage, DreamboxesPage } from "pages";
+import { DreamboxPage, ListDreamboxesPage } from "pages";
 
 document.startApp = function (container) {
 	const store = createStore();
@@ -24,7 +24,7 @@ document.startApp = function (container) {
 		<MuiThemeProvider>
 			<Provider store={store}>
 				<Router history={history}>
-					<Route path="/" component={DreamboxesPage} />
+					<Route path="/" component={ListDreamboxesPage} />
 					<Route path="/dreambox/:id" component={DreamboxPage} />
 				</Router>
 			</Provider>
