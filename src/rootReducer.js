@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 import { routerReducer } from "react-router-redux";
 
-import todos from "todos";
 import dreamboxes from "dreamboxes"
+import pages from "pages"
 
 export default combineReducers({
 	"routing": routerReducer,
-	"todos": todos.reducer,
-	"dreamboxes": dreamboxes.reducer
+	"dreamboxes": dreamboxes.reducer,
+	"pages": pages.reducer
 })

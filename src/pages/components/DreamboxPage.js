@@ -12,7 +12,6 @@ class DreamboxPage extends React.Component {
 	handleBack() {
 		const { router } = this.context;
 		router.replace("/");
-
 	}
 
 	render() {
@@ -23,7 +22,6 @@ class DreamboxPage extends React.Component {
 					title="Dreambox - no.2"
 					iconElementLeft={<IconButton><ArrowBack /></IconButton>}
 					onLeftIconButtonTouchTap={(e) => this.handleBack(e)} />
-
 				<div onClick={(e) => this.handleBack(e)}>
 					here is the box
 				</div>

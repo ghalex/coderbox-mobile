@@ -4,9 +4,11 @@ import { ViewDreamboxes } from "dreamboxes";
 
 const DreamboxesPage = ({}) => {
 
+	const styles = { example: { position: "fixed", top: 0, }, };
+
 	return (
 		<div className="page">
-			<AppBar title="Dreamboxes" />
+			<AppBar title="Dreamboxes" style={styles.example} />
 			<ViewDreamboxes />
 		</div>
 	)

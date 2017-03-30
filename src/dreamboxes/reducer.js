@@ -2,7 +2,8 @@ import * as constants from "./constants";
 
 const initialState = {
 	isFetching: false,
-	items: []
+	items: [],
+	activePage: ""
 };
 
 export default (state = initialState, {type, payload}) => {
@@ -19,7 +20,12 @@ export default (state = initialState, {type, payload}) => {
 			...state,
 			isFetching: false,
 			items: payload
-		}
+		};
+
+	case constants.DREAMBOX_OPEN:
+		return {
+			activePage : payload
+		};		
 
 	default:
 		return state;
